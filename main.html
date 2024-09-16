@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: red;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        /* Left-side menu */
+        .menu {
+            flex: 1;
+            background-color: red;
+            color: white;
+            padding: 20px;
+        }
+        .menu ul {
+            list-style: none;
+        }
+        .menu ul li {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid white;
+            cursor: pointer;
+        }
+        .menu ul li:hover {
+            background-color: white;
+            color: red;
+        }
+        /* Right-side profile column */
+        .profile-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+        .profile img {
+            border-radius: 50%;
+            border: 5px solid red;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .user-details {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .user-details h2, .user-details p {
+            margin-bottom: 10px;
+        }
+        /* Main photo album content */
+        .content {
+            flex: 3;
+            padding: 20px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .menu, .content, .profile-section {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Menu -->
+        <div class="menu">
+            <ul>
+                <li>Home</li>
+                <li>Albums</li>
+                <li>Upload</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1>Welcome to My Photo Album</h1>
+            <p>Here you can see my photos, upload new ones, and manage your albums.</p>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile">
+                <!-- User details above profile photo -->
+                <div class="user-details">
+                    <h2>John Doe</h2>
+                    <p>Photographer & Travel Enthusiast</p>
+                </div>
+                <!-- Profile Photo -->
+                <img src="https://i.pinimg.com/736x/ea/37/98/ea3798aea9f6fc70dd27d87f18d4c53d.jpg" alt="Profile Photo">
+                <!-- User details below profile photo -->
+                <div class="user-details">
+                    <p>Location: New York, USA</p>
+                    <p>Joined: January 2020</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
